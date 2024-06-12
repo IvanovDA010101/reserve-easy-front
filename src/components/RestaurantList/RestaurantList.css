@@ -1,0 +1,10 @@
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    flex-basis: 200px; /* начальную ширину карточки */
+    max-width: 300px; /* максимальную ширину карточки */
+    max-height: 300px; /* максимальную ширину карточки */
+}

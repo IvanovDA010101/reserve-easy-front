@@ -1,0 +1,32 @@
+.card-button {
+    /*border-radius: 3px;*/
+    /*background: rgba(255, 255, 255, 0.03);*/
+    /*!*color: #FFF;*!*/
+    /*padding: 20px;*/
+    border: none;
+    /*cursor: pointer;*/
+    /*!*text-align: start;*!*/
+    /*display: block;*/
+    /*!*width: 100%;*!*/
+
+
+    max-height: 333px;
+    min-height: 254px;
+    padding-left: 18px;
+    margin-bottom: 40px;
+    padding-right: 18px;
+}
+
+.inner-item{
+    max-height: 333px;
+    min-height: 254px;
+    top: 0;
+    /*width: 100%;*/
+    bottom: 0;
+    margin: auto;
+    /*position: absolute;*/
+    pointer-events: none;
+}
+.card-button:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
