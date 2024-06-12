@@ -18,7 +18,7 @@ function RestaurantCard({children, className, ...props}) {
     useEffect(() => {
         // Запрос для получения всех ресторанов из API
         const fetchRestaurantsImages = async () => {
-            const response = await fetch(`http://45.141.102.127:8080/api/v1/restaurants/${restaurant.id}/images/main?size=big`);
+            const response = await fetch(`http://45.141.102.127:8080/api/v1/restaurants/${restaurant.id}/images/main?size=medium`);
 
             if (!response.ok) {
                 throw new Error("Error fetching restaurants");
@@ -33,15 +33,33 @@ function RestaurantCard({children, className, ...props}) {
 
 
     const handleCardClick = () => {
-        navigate(`/restaurant/${restaurant.id}`, { state: { restaurant } })
+        navigate(`/restaurant/${restaurant.id}`, {state: {restaurant}})
     }
 
     return (
-        <button {...props} className={cl} onClick={handleCardClick}>
-            <img className="inner-item" src={restaurant.image} alt={props.name}/>
-            <p>{restaurant.name}</p>
-            <p>{restaurant.address}</p>
-        </button>
+        <div className="rest-container" onClick={handleCardClick}>
+            <div className="rest-image" style={{background: `url(${restaurant.image})`}}>
+                {/*<button {...props}  >*/}
+                {/*    <div className="inner-item" >*/}
+                {/*        /!*<img src={restaurant.image}  alt={props.name}/>*!/*/}
+                {/*    </div>*/}
+
+                {/*</button>*/}
+            </div>
+            <div className="rest-info">
+                <div className="name">
+                    {restaurant.name} </div>
+
+                <div className="desc">
+                    {restaurant.description}
+
+                </div>
+                <div className="address">
+                    {restaurant.address}</div>
+            </div>
+
+        </div>
+
     );
 }
 
