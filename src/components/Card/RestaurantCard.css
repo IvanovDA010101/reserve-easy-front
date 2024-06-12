@@ -1,32 +1,53 @@
-.card-button {
-    /*border-radius: 3px;*/
-    /*background: rgba(255, 255, 255, 0.03);*/
-    /*!*color: #FFF;*!*/
-    /*padding: 20px;*/
-    border: none;
-    /*cursor: pointer;*/
-    /*!*text-align: start;*!*/
-    /*display: block;*/
-    /*!*width: 100%;*!*/
 
-
-    max-height: 333px;
-    min-height: 254px;
-    padding-left: 18px;
-    margin-bottom: 40px;
-    padding-right: 18px;
+.rest-container {
+    margin: 50px;
+    text-align: left;
+}
+.rest-container:hover {
+    cursor: pointer;
 }
 
-.inner-item{
-    max-height: 333px;
-    min-height: 254px;
-    top: 0;
-    /*width: 100%;*/
-    bottom: 0;
-    margin: auto;
-    /*position: absolute;*/
-    pointer-events: none;
+.rest-image {
+    min-height: 300px;
+    min-width: 600px;
+    max-width: 600px;
+    max-height: 300px;
+    border-radius: 24px;
+    float: left;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    width: auto;
+    display: flex;
 }
-.card-button:hover {
+
+
+
+.rest-container .rest-info {
+    border-radius: 24px;
+    border-color: #03217b;
+
+    font-weight: bold;
+    font-style: oblique;
+    padding: 10px;
+
+    display: block;
+    white-space: normal;
+    max-width: 600px;
+    max-height: 300px;
+}
+
+.rest-info .name {
+    font-size: 24px;
+}
+
+.rest-info .address {
+     text-align: right;
+     justify-content: right;
+}
+
+
+.rest-image:hover {
     background: rgba(255, 255, 255, 0.10);
 }
