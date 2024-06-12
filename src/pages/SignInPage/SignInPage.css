@@ -18,6 +18,17 @@
     margin-bottom: 70px;
 }
 
+.button {
+    border-radius: 6px;
+    padding: 8px 30px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.25s;
+    font-size: 16px;
+    border: none;
+}
+
+
 @media only screen and (max-width: 320px) {
     .main-container {
         width: 80vw;

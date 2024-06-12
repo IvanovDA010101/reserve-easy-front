@@ -1,9 +1,10 @@
 import Button from "../Button/Button";
+import "./AdminSettingsButton.css"
 
 function AdminSettingsButton({children, onClick}) {
 
     return (
-        <Button className='button accent' onClick={onClick} children={children}></Button>
+        <Button className='admin-settings-button' onClick={onClick} children={children}></Button>
     )
 }
 

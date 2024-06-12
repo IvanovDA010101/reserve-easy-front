@@ -5,8 +5,6 @@ import {useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../../Context/AuthProvider";
 
-const logos = ['/logo.jpg']
-
 function Header() {
     const navigate = useNavigate();
 
@@ -27,15 +25,16 @@ function Header() {
 
     return (
         <div className="header">
-            <Logo image={logos[0]}/>
-            {!token ?
-                <>
-                    <Button onClick={handleClickSignIn}>Войти</Button>
-                    <Button onClick={handleClickSignUp}>Зарегистрироваться</Button>
-
-                </>
-                :
-                <Button onClick={handleLogOut} >Выйти</Button>}
+            <Logo/>
+            <div className="button-heare-wrapper">
+                {!token ?
+                    <>
+                        <Button className="button accept" onClick={handleClickSignIn}>Войти</Button>
+                        <Button className="button accept" onClick={handleClickSignUp}>Зарегистрироваться</Button>
+                    </>
+                    :
+                    <Button className="button accept" onClick={handleLogOut}>Выйти</Button>}
+            </div>
         </div>
     )
 }

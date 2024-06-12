@@ -96,7 +96,7 @@ export const ClientScheme = ({ tablesReserved, date, time }) => {
                 <canvas ref={canvasRef}></canvas> :
                 <div>
                     <p>Сначала авторизируйтесь</p>
-                    <Button onClick={handleClickSignIn}>Войти</Button>
+                    <Button className="button accept" onClick={handleClickSignIn}>Войти</Button>
                 </div>}
         </div>)
 

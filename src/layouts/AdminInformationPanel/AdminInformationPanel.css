@@ -1,0 +1,6 @@
+.admin-information-panel{
+    width: 70%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+}
