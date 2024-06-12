@@ -103,35 +103,9 @@
     padding-top: 70px;
 }
 
-input[type="text"], input[type="password"] {
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border-radius: 2rem;
-    width: 80%;
-    height: 3rem;
-    padding: 1rem;
-    border: none;
-    outline: none;
-    color: rgba(238, 31, 31, 0.8);
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-input[type="text"]:focus, input[type="password"]:focus {
-    display: inline-block;
-    box-shadow: 0 0 0 0.2rem rgba(238, 31, 31, 0.8);
-    backdrop-filter: blur(12rem);
-    border-radius: 2rem;
-}
-
-input[type="text"]::placeholder, input[type="password"]::placeholder {
-    color: black;
-    font-weight: 100;
-    font-size: 1rem;
-}
 
 button[type="submit"] {
-    background: rgba(238, 31, 31, 0.8);
+    background: rgb(210, 189, 112);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     width: 65%;

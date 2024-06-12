@@ -1,8 +1,10 @@
 .restaurant-list{
-    display: flex;
+    display: inline-flex;
+    margin-bottom: 10px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    min-height: 1000px!important;
 }
 
 .item{
