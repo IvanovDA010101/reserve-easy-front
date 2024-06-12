@@ -7,6 +7,7 @@ import RestaurantPage from "./pages/RestaurantPage/RestaurantPage";
 import Login from "./pages/SignInPage/SignInPage";
 import Register from "./pages/SignUpPage/SignUpPage";
 import AdminPage from "./pages/AdminPage/AdminPage";
+import Footer from "./layouts/Footer/Footer";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/register" element={<Register/>}/>
                     <Route path="/admin" element={<AdminPage/>}/>
                 </Routes>
+                <Footer/>
             </AuthProvider>
         </div>
     );

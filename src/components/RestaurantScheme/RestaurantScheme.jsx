@@ -157,8 +157,6 @@ export const MyFabricComponent = () => {
 
 
 
-
-
     // const t = new fabric.IText(objId.current.toString(), textOptions);
     // const g = new fabric.Group([o, t], gOptions);
     // canvas.current.add(g);
@@ -188,7 +186,6 @@ export const MyFabricComponent = () => {
     objId.current++;
     return g;
   }
-
   function addChair() {
     const o = new fabric.Rect({
       width: 30,
@@ -316,11 +313,11 @@ export const MyFabricComponent = () => {
   //TODO: самая тупая заглушка
   const sendDataToBackend = async (json) => {
     try {
-      const response = await fetch(`http://45.141.102.127:8080/api/v1/owner/restaurants/${id}/tables`, {
+      const response = await fetch(`http://45.141.102.127:8080/api/v1/owner/restaurants/1/tables`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Указываем тип контента как JSON
-          'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWthbkBnbWFpbC5jb20ifQ.m9kj-TWutvYCnQOMCG9eZ8MP-ASJtKWusyGfAcDXzp4',
+          'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aW1rYWE1QHlhbmRleC5ydSJ9.lhE6De0vdiauNQI6WyX0h8Aw9VZcgqSYZTMshfbB3ME',
           'accept': '*/*'
         },
         body: json
