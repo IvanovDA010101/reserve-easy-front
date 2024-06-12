@@ -1,0 +1,10 @@
+input[type="text"] {
+    /*display: inline-block;*/
+    /*padding: 100px;*/
+    margin: 10px;
+    width: 100%;
+    background-color: aliceblue;
+    /*box-shadow: 0 0 0 0.2rem rgba(238, 31, 31, 0.8);*/
+    /*backdrop-filter: blur(12rem);*/
+    /*border-radius: 2rem;*/
+}

@@ -1,10 +1,9 @@
-import Button from "../Button/Button";
-import "./AdminSwitchers.css"
+import "./AdminPanelInput.css"
 
-function AdminPanelInput({children}) {
+function AdminPanelInput({children, height, placeholder}) {
 
     return (
-        <input type="text">{children}</input>
+        <input type="text" placeholder={placeholder} style={{height: height}}>{children}</input>
     )
 }
 

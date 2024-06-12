@@ -1,11 +1,10 @@
 import "./AdminPanelHeader.css"
 
-function AdminPanelHeader({children}) {
+function AdminPanelHeader({headerText}) {
 
-    const header = "Настройки заведения"
 
     return (
-        <div className="admin-panel-header">{header}</div>
+        <div className="admin-panel-header">{headerText}</div>
     )
 }
 

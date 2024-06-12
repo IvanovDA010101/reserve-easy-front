@@ -1,13 +1,19 @@
 import "./AdminInformationPanel.css"
-import AdminPanelHeader from "../../components/AdminPanelHeader/AdminPanelHeader";
-import AdminSwitchers from "../../components/AdminSwitchers/AdminSwitchers";
+import React, {useState} from "react";
+import AdminSettingsPanel from "../AdminSettingsPanel/AdminSettingsPanel";
+import AdminReservePanel from "../AdminReservePanel/AdminReservePanel";
 
-function AdminInformationPanel() {
+function AdminInformationPanel({showSettingsLayout, showReserveLayout}) {
+
+    // const [showSettings, setShowSettings] = useState(true);
+    // const [showReserve, setShowReserve] = useState(false);
+    // const [showMenu, setShowMenu] = useState(false);
+
     return (
-        <div className="admin-information-panel">
-            <AdminPanelHeader/>
-            <AdminSwitchers/>
-        </div>
+        <>
+            {showSettingsLayout && <AdminSettingsPanel/>}
+            {showReserveLayout && <AdminReservePanel/>}
+        </>
     )
 }
 

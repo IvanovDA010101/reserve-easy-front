@@ -18,3 +18,8 @@
     letter-spacing: -0.02em;
     color: #d2bd70;
 }
+
+.admin-switch:hover{
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0.2, 0.2, 0.2, 0.4);
+}

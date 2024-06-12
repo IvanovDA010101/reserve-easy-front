@@ -3,4 +3,11 @@
     padding-left: 2rem;
     display: flex;
     flex-direction: column;
+    align-content: center;
+}
+
+.save-changes{
+    width: 30%;
+    margin: 20px;
+    place-self: center;
 }

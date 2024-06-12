@@ -1,14 +1,15 @@
 import AdminSettingsButton from "../../components/AdminSettingsButton/AdminSettingsButton";
 import "./AdminNavigationLayout.css"
-function AdminNavigationLayout(){
+function AdminNavigationLayout({onClickSettings, onClickReserve}){
+
 
     return(
         <div className="admin-navigation-layout">
-            <AdminSettingsButton/>
-            <AdminSettingsButton/>
-            <AdminSettingsButton/>
-            <AdminSettingsButton/>
-            <AdminSettingsButton/>
+            <AdminSettingsButton onClick={onClickSettings} text="Настройки заведения"/>
+            <AdminSettingsButton onClick={onClickReserve} text="Бронирование"/>
+            <AdminSettingsButton text="Акции"/>
+            <AdminSettingsButton text="События"/>
+            <AdminSettingsButton text="Общие настройки"/>
         </div>
     )
 
