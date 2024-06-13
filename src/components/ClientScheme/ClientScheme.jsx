@@ -1,4 +1,4 @@
-import {useContext, useEffect, useRef, useState} from 'react';
+import {useCallback, useContext, useEffect, useRef, useState} from 'react';
 import * as fabric from 'fabric';
 import {useNavigate} from "react-router-dom";
 import {useParams} from "react-router";
@@ -6,10 +6,11 @@ import {AuthContext} from "../../Context/AuthProvider";
 import Button from "../Button/Button";
 
 
-export const ClientScheme = ({ tablesReserved, date, time }) => {
+export const ClientScheme = ({ tablesReserved, selectedDate}) => {
     const canvasRef = useRef(null);
     const navigate = useNavigate()
     let {token} = useContext(AuthContext)
+    const [_,update] = useState()
 
     const tables = tablesReserved
     const params = useParams()
@@ -34,12 +35,14 @@ export const ClientScheme = ({ tablesReserved, date, time }) => {
                     const jsonParse = JSON.parse(data.file);
                     const objects = await fabric.util.enlivenObjects(jsonParse.objects);
 
+
                     canvas.clear()
 
                     objects.forEach(function (o) {
 
-                        console.log("Tables = " + tables.includes(3))
 
+                        console.log("Tables = " + tables.includes(3))
+                        // debugger
                         if (tables.includes(parseInt(o._objects[1].text))) {
                             o.selectable = false;
                             o._objects[0].fill = 'red';
@@ -74,8 +77,8 @@ export const ClientScheme = ({ tablesReserved, date, time }) => {
 
             }
 
-        fetchData();
-    }, [canvas, date, time]);
+        fetchData().then();
+    }, [canvas, selectedDate]);
 
     useEffect(() => {
         if (!canvas) {
@@ -84,16 +87,20 @@ export const ClientScheme = ({ tablesReserved, date, time }) => {
         }
     }, []);
 
-
-
     const handleClickSignIn = () =>{
         navigate("/login")
     }
 
+    useEffect(() => {
+        if (canvas) {
+            canvas.renderAll();
+        }
+    }, [tablesReserved]);
+
     return (
         <div>
             {token ?
-                <canvas ref={canvasRef}></canvas> :
+                <canvas ref={canvasRef} ></canvas> :
                 <div>
                     <p>Сначала авторизируйтесь</p>
                     <Button className="button accept" onClick={handleClickSignIn}>Войти</Button>
