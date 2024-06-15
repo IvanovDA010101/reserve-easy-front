@@ -1,10 +1,10 @@
 import Button from "../Button/Button";
 import "./AdminSettingsButton.css"
 
-function AdminSettingsButton({children, text, onClick}) {
+function AdminSettingsButton({as, to, children, text, onClick}) {
 
     return (
-        <Button className='admin-settings-button' onClick={onClick} children={children} >{text}</Button>
+        <Button as={as} className='admin-settings-button' to={to} onClick={onClick} children={children} >{text}</Button>
     )
 }
 

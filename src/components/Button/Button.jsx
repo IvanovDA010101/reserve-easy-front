@@ -1,10 +1,10 @@
 import './Button.css';
 import { memo } from 'react';
 
-function Button({ children, onClick, className }) {
+function Button({ as: Component = 'button', to, children, onClick, className }) {
     console.log('Button');
     return (
-        <button className={className} onClick={onClick}>{children}</button>
+        <Component to={to} className={className} onClick={onClick}>{children}</Component>
     );
 }
 
