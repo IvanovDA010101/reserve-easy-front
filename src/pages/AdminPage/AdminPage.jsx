@@ -1,23 +1,26 @@
-import AdminNavigationLayout from "../../layouts/adminNavigationLayout/AdminNavigationLayout";
-import AdminInformationPanel from "../../layouts/AdminInformationPanel/AdminInformationPanel";
-import "./AdminPage.css"
-import {useState} from "react";
-function AdminPage(){
-    const [showSettingsLayout, setShowSettingsLayout] = useState(true);
-    const [showReserveLayout, setShowReserveLayout] = useState(false);
+import React from "react";
+import {Navigate, Route, Routes} from "react-router-dom";
 
-    const onClickSettings = () => {
-        setShowReserveLayout(false)
-        setShowSettingsLayout(true)
-    }
-    const onClickReserve = () => {
-        setShowReserveLayout(true)
-        setShowSettingsLayout(false)
-    }
+import AdminNavigationLayout from "../../layouts/adminNavigationLayout/AdminNavigationLayout";
+import AdminSettingsPanel from "../../layouts/AdminSettingsPanel/AdminSettingsPanel";
+import AdminReservePanel from "../../layouts/AdminReservePanel/AdminReservePanel";
+
+import "./AdminPage.css"
+
+function AdminPage(){
+
     return(
         <div className="admin page">
-            <AdminNavigationLayout onClickSettings={onClickSettings} onClickReserve={onClickReserve}/>
-            <AdminInformationPanel showSettingsLayout={showSettingsLayout} showReserveLayout={showReserveLayout}/>
+            <AdminNavigationLayout />
+            <Routes>
+                {/*
+                  Все пути также как и ссылки (Link) должны ссылаться на одну общую мапу
+                  <Route path={ROUTES_ADMIN.RESERVE} element={<AdminReservePanel/>}/>
+                */}
+                <Route path="settings" element={<AdminSettingsPanel/>}/>
+                <Route path="reserve" element={<AdminReservePanel/>}/>
+                <Route path="*" element={<Navigate to="/admin/settings" />} />
+            </Routes>
         </div>
     )
 }
