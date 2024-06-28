@@ -1,8 +1,9 @@
 import React, {useContext, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {AuthContext} from "../../Context/AuthProvider";
+import styles from './LoginPage.module.css';
 
-function Login() {
+function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
@@ -37,27 +38,27 @@ function Login() {
     };
 
     return (
-        <div className="main-container">
-            <form onSubmit={handleLogin}>
+        <div>
+            <form className={styles.form} onSubmit={handleLogin}>
                 <h2>Войти</h2>
-                <div className="input-container">
                     <input
+                        className={styles.login__input}
                         type="text"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
+                        className={styles.password__input}
                         type="password"
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    </div>
                     <button type="submit">Войти</button>
             </form>
         </div>
 );
 };
 
-export default Login;
+export default LoginPage;
